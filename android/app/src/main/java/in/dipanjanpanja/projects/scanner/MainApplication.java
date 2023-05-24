@@ -1,4 +1,4 @@
-package com.scanner;
+package in.dipanjanpanja.projects.scanner;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

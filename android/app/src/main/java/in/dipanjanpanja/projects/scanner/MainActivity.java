@@ -1,4 +1,4 @@
-package com.scanner;
+package in.dipanjanpanja.projects.scanner;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

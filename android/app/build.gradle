@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.scanner"
+    namespace "in.dipanjanpanja.projects.scanner"
     defaultConfig {
-        applicationId "com.scanner"
+        applicationId "in.dipanjanpanja.projects.scanner"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
