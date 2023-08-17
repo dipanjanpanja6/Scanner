@@ -1,3 +1,4 @@
+{
   "javascript.validate.enable": false,
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
@@ -16,3 +17,4 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "typescript.preferences.importModuleSpecifier": "non-relative"
+}

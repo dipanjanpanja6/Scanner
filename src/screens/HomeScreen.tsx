@@ -1,26 +1,28 @@
-import React, {FC, useState} from 'react';
-import {GoogleVisionBarcodesDetectedEvent, RNCamera} from 'react-native-camera';
-import {StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native';
-import ZoomView from '../components/ZoomView';
-import {Barcode} from 'react-native-camera';
-import {Button} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
+import React, {FC, useState} from 'react';
+import {StatusBar, StyleSheet, Text, View, useColorScheme} from 'react-native';
+
+import ZoomView from '../components/ZoomView';
 
 function HomeScreen() {
+  const {navigate} = useNavigation();
   const isDarkMode = useColorScheme() === 'dark';
   const [state, setState] = useState<{
     zoom: number;
     barcodes: GoogleVisionBarcodesDetectedEvent['barcodes'];
   }>({zoom: 0, barcodes: []});
-  const {navigate} = useNavigation();
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? '#000' : '#fcf',
   };
+
   const barcodeRecognized = ({barcodes}: GoogleVisionBarcodesDetectedEvent) => {
     setState({...state, barcodes});
     barcodes.forEach(barcode => console.warn(barcode.data));
   };
+
   const renderBarcodes = () => <View>{state.barcodes.map(renderBarcode)}</View>;
+
   const renderBarcode: FC<Barcode> = ({bounds, data}) => (
     <React.Fragment key={data + bounds.origin.x}>
       <View
@@ -67,10 +69,9 @@ function HomeScreen() {
           onZoomEnd={() => {
             console.log('zoom end');
           }}>
-          <RNCamera zoom={state.zoom} style={{flex: 1}} captureAudio={false}>
-            {/* onGoogleVisionBarcodesDetected={barcodeRecognized}> */}
+          {/* <RNCamera zoom={state.zoom} style={{flex: 1}} captureAudio={false}>
             {renderBarcodes()}
-          </RNCamera>
+          </RNCamera> */}
         </ZoomView>
       </View>
     </View>

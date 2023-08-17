@@ -1,9 +1,5 @@
-import React, {FC, useState} from 'react';
-import {GoogleVisionBarcodesDetectedEvent, RNCamera} from 'react-native-camera';
-import {StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native';
-import ZoomView from '../components/ZoomView';
-import {Barcode} from 'react-native-camera';
-import QRCodeStyled from 'react-native-qrcode-styled';
+import React, {} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
 function SettingsScreen() {
   return (
